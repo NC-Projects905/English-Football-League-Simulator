@@ -4,21 +4,21 @@ This roadmap describes a beginner-friendly path from planning to a playable simu
 
 The rulebook is the reference for confirmed project rules. If the roadmap and rulebook disagree, update the roadmap to match the rulebook.
 
-## Stage 0: Finish the rules and data plan — no game code
+## Stage 0: Finish and confirm all rules and data choices — no code
 
 1. Recheck the 2026/27 club allocations for amendments before preparing the starting database.
 2. Review [the league-system specification](LEAGUE_SYSTEM.md), especially its marked open points on EFL and National League playoff rules and eligibility.
 3. Define how future simulated seasons assign clubs to regional divisions, including lateral moves. Keep the rule consistent and explain where it simplifies the FA's real allocation process.
 4. Choose official sources for club/player facts, geographic labels and 2025/26 player performance information.
 5. Decide the club and player data fields and how to organise stable data separately from season records.
-6. Design the initial player/team rating methods from the agreed 2025/26 baseline and the performance-based update guidelines.
-7. Review and approve the data and rules documents before implementation starts.
+6. Design player rating methods from the agreed 2025/26 baseline and end-of-season update guidelines; design team ratings from squad strength only.
+7. Review and approve the data and rules documents before implementation starts. Resolve every item marked open in the Rulebook and complete all required official checks.
 
-**Ready to move on when:** The 2026/27 starting divisions, promotion/relegation transitions, Step 4 floor behaviour and regional assignment approach are checked and written clearly enough to test with examples.
+**Ready to move on when:** Every first-version rule and implementation choice is confirmed, all required official checks are recorded, and the Rulebook has no unresolved items. Do not create application code before this gate is met.
 
-## Stage 1: Choose the app tools and set up the project
+## Stage 1: Set up the selected app tools
 
-1. Choose a beginner-friendly browser technology stack together. The current idea is JavaScript with HTML and CSS, possibly using Vite; this is not yet a final decision.
+1. Set up the confirmed Next.js and TypeScript browser application and choose a suitable PostgreSQL backend.
 2. Create the matching `.gitignore`, project setup and simple browser screen.
 3. Explain how to run the project in Codespaces and how a static website could be published later.
 4. Add a small test setup when it is useful for checking the simulation rules.
@@ -27,12 +27,12 @@ The rulebook is the reference for confirmed project rules. If the roadmap and ru
 
 ## Stage 2: Build one small playable league slice
 
-1. Use a small group of real clubs from one confirmed division.
+1. Start with the Premier League, the confirmed first playable division.
 2. Store clubs, senior players, ratings and that season's division membership as understandable data.
 3. Generate a home-and-away fixture list.
 4. Simulate a match. Team strength and player ratings should affect results, home advantage should matter, and surprising results should remain possible.
 5. Display the score and update the league table.
-6. Add tests for match records, points, goal difference and table ordering.
+6. Test formulas in spreadsheets before creating software code. Run thousands of simulated matches in the spreadsheet model before finalising the match engine's numerical settings.
 
 **Ready to move on when:** A short season can be played from first fixture to final table, and important calculations have tests.
 
@@ -68,18 +68,26 @@ The rulebook is the reference for confirmed project rules. If the roadmap and ru
 
 ## Stage 6: Improve and extend carefully
 
-Possible later additions include transfers, changing squads, more detailed match explanations and additional presentation features. Each should be discussed before it becomes part of the plan. A backend is only needed if a chosen feature requires one.
+Possible later additions include transfers, changing squads, more detailed match explanations and additional presentation features. Each should be discussed before it becomes part of the plan.
 
 ## Decisions still open
 
-- Which official sources to use for club/player facts and player 2025/26 performance data.
 - Which official location labels and geographic levels to store.
 - Whether to store coordinates as well as town, county, country and region.
-- How regional assignments should work in simulated future seasons when the real FA has not published allocations for those alternate results.
-- The detailed match, player-rating and team-rating formulas.
-- Which single division should be the first playable slice.
-- Which browser stack to use.
-- Whether the first version should save seasons in the browser.
+- The exact expected-goals calculations and numerical tuning, including formula coefficients.
+- Exact formulas for starting player ratings, season-to-season player rating changes and squad-strength-based team ratings.
+- Exact player attribute definitions, position weights, Best Available XI selection and substitute-quality contribution.
+- Injury probabilities and durations, automatic substitution rules, and event/statistic generation details. Expected assists (xA) have not been selected.
+- The deterministic geographic allocation algorithm for clubs promoted into regional divisions.
+- Competition-specific ground-grading and eligibility checks; the agreed default is that the next eligible club takes an ineligible club's place, subject to exact competition rules.
+- Official checks of current 2026/27 playoff and league regulations before coding.
+- The detailed PostgreSQL schema and specific backend/deployment choices.
+- Verification of final 2026/27 club lists before importing; the checking process is agreed.
+- Authoritative sources for club locations, geographic detail to store, and whether to include coordinates.
+- Exact fixture dates, rounds and scheduling to avoid clashes; postponed matches are not simulated.
+- Exact interface behavior for controls and inspection across independently progressing leagues.
+- Save database provisioning and recovery behavior after a failed save or interrupted match.
+- The source for 2025/26 player performance statistics and final starting-data verification.
 
 ## Working habits
 

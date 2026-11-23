@@ -23,9 +23,10 @@ The eventual club database could include:
 | `county` | County or comparable local area | Proposed |
 | `country` | England, Wales, or another country if needed for a club in the English pyramid | Proposed |
 | `region` | Stable, human-readable official geographic label | Proposed; source and detail level are open |
+| `stadiumName` | Name of the club's stadium | Proposed |
 | `latitude` and `longitude` | Optional location coordinates to compare travel distances more consistently | Open; may be useful if region labels alone are too broad |
 
-These are conceptual field names only. No programming language or data format has been chosen.
+These are conceptual field names only. Next.js, TypeScript and PostgreSQL are selected, but the detailed database schema has not been chosen.
 
 ## Official location labels
 

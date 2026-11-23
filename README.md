@@ -8,11 +8,11 @@ This project is also a way to learn programming through a practical, step-by-ste
 
 ## How it is expected to run
 
-The current proposal is a small browser-based application that can be developed in GitHub Codespaces and eventually opened as a website. A static browser app could be hosted on a free static hosting service such as GitHub Pages or Cloudflare Pages. This is only a direction to explore: no language, framework, hosting service or run commands have been chosen yet. A backend would be considered only if a confirmed feature needs one.
+The confirmed stack is a Next.js and TypeScript browser application with a PostgreSQL backend. Hosting, the specific backend framework and run commands still need to be chosen. The app is intended to be developed in GitHub Codespaces and eventually opened as a website.
 
 ## Development status
 
-**(70%-85%) Planned** No game or application has been implemented. The project scope and season system are documented in the rulebook. The source-backed movement summary is in the league system document. Some details still need design or another current-season check, including regional allocations in future simulated seasons, competition eligibility exceptions, player/team rating formulas and the technology stack.
+**Planned** No game or application has been implemented. The project scope and season system are documented in the rulebook. The source-backed movement summary is in the league system document. Some details still need design or another current-season check, including regional allocations in future simulated seasons, competition eligibility exceptions, match and player/team rating formulas, and the detailed database schema.
 
 ## Documents
 
@@ -24,4 +24,4 @@ The current proposal is a small browser-based application that can be developed 
 - [Beginner-friendly development roadmap](docs/ROADMAP.md)
 - [Guidelines for AI coding sessions](AGENTS.md)
 
-There is no `.gitignore` yet because the technology stack has not been selected. Add the appropriate ignore rules after that decision so the file matches the actual tools used.
+There is no `.gitignore` or application setup yet. Add the appropriate project files when implementation begins with the selected stack.
