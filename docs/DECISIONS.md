@@ -197,3 +197,10 @@ This log records choices that affect the project's direction and why they were m
 - **Decision:** Automatically save simulator progress after every simulated match. Users can leave and return later, stop a league season partway through, and resume it; each league remembers its own current matchday. Closing the website must not lose completed results.
 - **Reason:** Independent league progress should be resumable, and completed match results must persist across sessions.
 - **Revisit when:** Defining the exact save-state schema and recovery behaviour for an interrupted match or failed save.
+
+## D-029: Keep multiple independent, limited save files
+
+- **Status:** Confirmed; maximum save count open
+- **Decision:** Support multiple independent save files. Each save contains its own clubs and league positions, fixtures and results, player and team ratings, season history, promotions and relegations, and simulation progress. Changes to one save must not affect another. Ask the user to confirm before deleting a save. The number of available save slots is limited, but its maximum has not been chosen.
+- **Reason:** The user wants to experiment with different simulations without changing another save.
+- **Revisit when:** Designing save management and deciding the maximum number of slots.

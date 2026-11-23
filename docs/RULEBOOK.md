@@ -1,4 +1,4 @@
-# Football League Simulator — Rulebook
+Hi# Football League Simulator — Rulebook
 
 This is the main reference for the simulator's agreed scope and season rules. Use it to guide future planning and coding. Confirmed rules should not be changed without discussing the change with the developer. Items marked **To decide** remain open.
 
@@ -120,6 +120,8 @@ Step 4 is the simulator's floor. A club finishing in a Step 4 relegation place *
 League seasons begin in August and run through May, with each league maintaining its own fixture schedule and progressing independently. One league can be simulated without advancing another; for example, League Two can progress while League One remains unchanged. Preserve each league's fixture progress separately in the season history. Cup competitions are outside the initial scope and may be added later. A league season is complete only after all required matches and playoffs in that league have finished; then calculate its final table and update its season records.
 
 Automatically save progress after every simulated match. Users can leave and return later or stop a league season partway through; each league remembers its own current matchday. Closing the website must not lose completed results.
+
+The user can create multiple independent save files. Each save keeps its own clubs and league positions, fixtures and results, player and team ratings, season history, promotions and relegations, and simulation progress. Changes in one save must not affect another. Save slots are limited; the maximum number has not been decided. Ask for confirmation before deleting a save.
 
 The user can choose to simulate one selected fixture in any division, every fixture scheduled for a selected league's matchday, or all remaining fixtures in a selected league until its season is complete.
 
