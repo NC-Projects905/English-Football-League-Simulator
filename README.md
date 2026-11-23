@@ -12,7 +12,7 @@ The current proposal is a small browser-based application that can be developed 
 
 ## Development status
 
-**Planning only.** No game or application has been implemented. The project scope and season system are documented in the rulebook. The source-backed movement summary is in the league system document. Some details still need design or another current-season check, including regional allocations in future simulated seasons, competition eligibility exceptions, player/team rating formulas and the technology stack.
+**(70%-85%) Planned** No game or application has been implemented. The project scope and season system are documented in the rulebook. The source-backed movement summary is in the league system document. Some details still need design or another current-season check, including regional allocations in future simulated seasons, competition eligibility exceptions, player/team rating formulas and the technology stack.
 
 ## Documents
 
